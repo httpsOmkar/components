@@ -18,5 +18,4 @@ deploy:
   provider: script
   skip_cleanup: true
   script:
-    - yarn run semantic-release
-    - yarn run styleguide:deploy
+    - yarn run semantic-release && yarn run styleguide:deploy --repo https://github.com/httpsOmkar/auth-react-component
