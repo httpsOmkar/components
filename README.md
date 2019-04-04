@@ -71,5 +71,5 @@ Thanks!
 [npm-url]: https://www.npmjs.com/package/keycloak-js-react
 [snyk-image]: https://snyk.io/test/github/httpsOmkar/auth-react-component/badge.svg?targetFile=package.json
 [snyk-url]: https://snyk.io/test/github/httpsOmkar/auth-react-component/badge.svg?targetFile=package.json
-[travis-image]: https://travis-ci.com/httpsOmkar/auth-react-component.svg?branch=master
-[travis-url]: https://travis-ci.com/httpsOmkar/auth-react-component
+[travis-image]: https://travis-ci.org/httpsOmkar/auth-react-component.svg?branch=master
+[travis-url]: https://travis-ci.org/httpsOmkar/auth-react-component
