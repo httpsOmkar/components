@@ -3,7 +3,8 @@
     <img src="https://raw.githubusercontent.com/mozilla-frontend-infra/components/master/logo.png" alt="Logo" width=72 height=72>
   </a>
 
-  <h3 align="center">Auth Components</h3>
+  <h3 align="center">Keycloak with ReactJS</h3>
+  <h6 align="center">Auth components</h3>
 </p>
 
 <br>
@@ -69,6 +70,6 @@ Thanks!
 [npm-image]: https://img.shields.io/npm/v/keycloak-js-react.svg
 [npm-url]: https://www.npmjs.com/package/keycloak-js-react
 [snyk-image]: https://snyk.io/test/github/httpsOmkar/auth-react-component/badge.svg?targetFile=package.json
-[snyk-url]: https://snyk.io/test/github/httpsOmkar/auth-react-component/badge.svg?targetFile=package.json)](https://snyk.io/test/github/httpsOmkar/auth-react-component?targetFile=package.json
+[snyk-url]: https://snyk.io/test/github/httpsOmkar/auth-react-component/badge.svg?targetFile=package.json
 [travis-image]: https://travis-ci.com/httpsOmkar/auth-react-component.svg?branch=master
 [travis-url]: https://travis-ci.com/httpsOmkar/auth-react-component
