@@ -65,8 +65,6 @@ Feel free to open an issue, submit a pull request, or contribute however you wou
 documentation is still a work in progress, so file an issue or submit a PR to ask questions or make improvements.
 Thanks!
 
-## Thanks
-
 [npm-image]: https://img.shields.io/npm/v/keycloak-js-react.svg
 [npm-url]: https://www.npmjs.com/package/keycloak-js-react
 [snyk-image]: https://snyk.io/test/github/httpsOmkar/auth-react-component/badge.svg?targetFile=package.json
