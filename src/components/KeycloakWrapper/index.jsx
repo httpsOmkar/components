@@ -49,7 +49,7 @@ export default class KeycloakWrapper extends Component {
     children: null,
     keycloak: null,
     tokenUpdateInterval: null,
-    errorChildren: <KeycloakError />,
+    errorChildren: null,
   };
 
   state = {
@@ -86,6 +86,7 @@ export default class KeycloakWrapper extends Component {
                 }
               });
             }, this.props.tokenUpdateInterval);
+            resolve(authenticated);
           } else {
             keycloak.login();
           }
@@ -115,8 +116,8 @@ export default class KeycloakWrapper extends Component {
       .then(docs => {
         this.setState({ keycloakPromise: docs });
       })
-      .catch(e => {
-        this.setState({ error: e });
+      .catch(error => {
+        this.setState({ error });
       });
   }
 
@@ -134,11 +135,14 @@ export default class KeycloakWrapper extends Component {
   render() {
     const { keycloakPromise, error } = this.state;
     const { children, errorChildren } = this.props;
+    const ErrorChild = errorChildren || KeycloakError;
 
     return (
       <KeycloakContext.Provider value={this.state}>
-        <div>{!error && <div>{keycloakPromise && children}</div>}</div>
-        <div>{error && <div>{errorChildren}</div>}</div>
+        <div>
+          {!error && <div>{keycloakPromise && children}</div>}
+          {error && <ErrorChild />}
+        </div>
       </KeycloakContext.Provider>
     );
   }
