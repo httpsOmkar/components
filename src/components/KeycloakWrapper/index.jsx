@@ -4,7 +4,7 @@ import { string, element, any, object, number } from 'prop-types';
 export const KeycloakContext = React.createContext();
 
 /**
- * Render children as syntax-highlighted monospace code.
+ * Render children when authenticated with the keycloak.
  */
 export default class KeycloakWrapper extends Component {
   static propTypes = {
@@ -52,6 +52,7 @@ export default class KeycloakWrapper extends Component {
 
   state = {
     keycloakPromise: null,
+    error: null,
   };
 
   /**
@@ -107,14 +108,13 @@ export default class KeycloakWrapper extends Component {
     });
   }
 
-  // TODO: FIX THIS
   componentDidMount() {
     this.keycloakPromise()
       .then(docs => {
         this.setState({ keycloakPromise: docs });
       })
-      .catch(() => {
-        // TODO: this.setState({ error: e });
+      .catch(e => {
+        this.setState({ error: e });
       });
   }
 
@@ -130,12 +130,13 @@ export default class KeycloakWrapper extends Component {
    * @returns {*}
    */
   render() {
-    const { keycloakPromise } = this.state;
-    const { children } = this.props;
+    const { keycloakPromise, error } = this.state;
+    const { children, errorChildren } = this.props;
 
     return (
       <KeycloakContext.Provider value={this.state}>
-        <div>{keycloakPromise && children}</div>
+        <div>{!error && <div>{keycloakPromise && children}</div>}</div>
+        <div>{error && <div>{errorChildren}</div>}</div>
       </KeycloakContext.Provider>
     );
   }
