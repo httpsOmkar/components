@@ -13,7 +13,8 @@
     "update:authors": "scripts/authors",
     "styleguide:build": "styleguidist build",
     "styleguide:deploy": "styleguidist build && gh-pages -d styleguide --remote upstream",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "commit": "npx git-cz"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-0",

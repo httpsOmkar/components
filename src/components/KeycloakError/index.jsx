@@ -14,9 +14,9 @@ export default class KeycloakError extends PureComponent {
   /**
    * Normalize the error into human readable string
    * @param error
-   * @returns {String}
+   * @returns {String|null}
    */
-  normalizeError(error) {
+  static normalizeError(error) {
     if (!error) {
       return null;
     }
@@ -27,7 +27,7 @@ export default class KeycloakError extends PureComponent {
   render() {
     return (
       <KeycloakContext.Consumer>
-        {({ error }) => this.normalizeError(error)}
+        {({ error }) => KeycloakError.normalizeError(error)}
       </KeycloakContext.Consumer>
     );
   }

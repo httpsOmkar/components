@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { string, element, any, object, number } from 'prop-types';
+import KeycloakError from '../KeycloakError';
 
 export const KeycloakContext = React.createContext();
 
@@ -48,6 +49,7 @@ export default class KeycloakWrapper extends Component {
     children: null,
     keycloak: null,
     tokenUpdateInterval: null,
+    errorChildren: <KeycloakError />,
   };
 
   state = {
