@@ -48,7 +48,6 @@ export default class KeycloakWrapper extends Component {
     children: null,
     keycloak: null,
     tokenUpdateInterval: null,
-    errorChildren: props => <p>Error {props.error}</p>,
   };
 
   state = {
