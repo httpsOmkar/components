@@ -1,6 +1,6 @@
-import React, { PureComponent } from "react";
-import { string } from "prop-types";
-import { KeycloakContext } from "../KeycloakWrapper";
+import React, { PureComponent } from 'react';
+import { string } from 'prop-types';
+import { KeycloakContext } from '../KeycloakWrapper';
 
 /**
  * Render the Keycloak ERROR if there any
@@ -8,7 +8,7 @@ import { KeycloakContext } from "../KeycloakWrapper";
 export default class KeycloakError extends PureComponent {
   static propTypes = {
     /** The CSS class name of the wrapper element */
-    className: string
+    className: string,
   };
 
   /**
