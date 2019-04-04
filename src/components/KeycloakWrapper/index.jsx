@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { string, element, any, object, number } from 'prop-types';
+import KeycloakError from '../KeycloakError';
 
 export const KeycloakContext = React.createContext();
 
 /**
- * Render children as syntax-highlighted monospace code.
+ * Render children when authenticated with the keycloak.
  */
 export default class KeycloakWrapper extends Component {
   static propTypes = {
@@ -48,10 +49,12 @@ export default class KeycloakWrapper extends Component {
     children: null,
     keycloak: null,
     tokenUpdateInterval: null,
+    errorChildren: null,
   };
 
   state = {
     keycloakPromise: null,
+    error: null,
   };
 
   /**
@@ -83,6 +86,7 @@ export default class KeycloakWrapper extends Component {
                 }
               });
             }, this.props.tokenUpdateInterval);
+            resolve(authenticated);
           } else {
             keycloak.login();
           }
@@ -107,14 +111,13 @@ export default class KeycloakWrapper extends Component {
     });
   }
 
-  // TODO: FIX THIS
   componentDidMount() {
     this.keycloakPromise()
       .then(docs => {
         this.setState({ keycloakPromise: docs });
       })
-      .catch(() => {
-        // TODO: this.setState({ error: e });
+      .catch(error => {
+        this.setState({ error });
       });
   }
 
@@ -130,12 +133,16 @@ export default class KeycloakWrapper extends Component {
    * @returns {*}
    */
   render() {
-    const { keycloakPromise } = this.state;
-    const { children } = this.props;
+    const { keycloakPromise, error } = this.state;
+    const { children, errorChildren } = this.props;
+    const ErrorChild = errorChildren || KeycloakError;
 
     return (
       <KeycloakContext.Provider value={this.state}>
-        <div>{keycloakPromise && children}</div>
+        <div>
+          {!error && <div>{keycloakPromise && children}</div>}
+          {error && <ErrorChild />}
+        </div>
       </KeycloakContext.Provider>
     );
   }
