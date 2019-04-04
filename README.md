@@ -38,7 +38,7 @@ const KeycloakWrapper = require('keycloak-js-react/components/KeycloakWrapper').
 
 ### Usage
 ```jsx harmony
-<KeycloakWrapper keycloak={ keycloakInstance } keycloakOptions={ { onLoad: 'check-sso', checkLoginIframeInterval: 1 } } tokenUpdateInterval={300000}>
+<KeycloakWrapper keycloak={ keycloakInstance } keycloakOptions={{ onLoad: 'check-sso', checkLoginIframeInterval: 1 }} tokenUpdateInterval={300000}>
   <App/>
 </KeycloakWrapper>
 ```
