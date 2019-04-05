@@ -1,0 +1,4 @@
+{
+  "pkgRoot": "build",
+  "preset": "eslint"
+}
