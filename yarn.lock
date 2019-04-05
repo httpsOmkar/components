@@ -7586,11 +7586,6 @@ jws@^3.1.5:
     jwa "^1.1.5"
     safe-buffer "^5.0.1"
 
-keyboardjs@^2.5.1:
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/keyboardjs/-/keyboardjs-2.5.1.tgz#2eb5d96bd1028e07136cd71919f607579edca716"
-  integrity sha512-mRf7MQMiFcudADEpPn3vTtl/rtFELo5MAiKA6yH4ShsFsnwwjMrVfaNt6bpYhBDeODs/T5NXwltz4+ktRQyP7A==
-
 keycloak-js@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/keycloak-js/-/keycloak-js-5.0.0.tgz#ed7f640d7a1748135ae8ad1750f8925005d4895f"
