@@ -13,4 +13,14 @@ describe('<KeycloakWrapper />', () => {
 
     expect(error).toMatchSnapshot();
   });
+
+  it('should render not render when no error', () => {
+    const error = mount(
+      <KeycloakContext.Provider value={{ error: null }}>
+        <KeycloakError />
+      </KeycloakContext.Provider>
+    );
+
+    expect(error).toMatchSnapshot();
+  });
 });

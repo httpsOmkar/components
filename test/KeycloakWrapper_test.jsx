@@ -17,4 +17,19 @@ describe('<KeycloakWrapper />', () => {
 
     expect(wrapper).toMatchSnapshot();
   });
+  it('should throw error correctly', () => {
+    const kc = new KeycloakMockInstance();
+
+    kc.isError = true;
+    const wrapper = mount(
+      <KeycloakWrapper
+        keycloak={kc}
+        keycloakOptions={{}}
+        tokenUpdateInterval={50}>
+        <p>Testing</p>
+      </KeycloakWrapper>
+    );
+
+    expect(wrapper).toMatchSnapshot();
+  });
 });
