@@ -16,11 +16,7 @@ exports[`<KeycloakWrapper /> should render correctly 1`] = `
     </p>
   }
   tokenUpdateInterval={50}
->
-  <div>
-    <div />
-  </div>
-</KeycloakWrapper>
+/>
 `;
 
 exports[`<KeycloakWrapper /> should throw error correctly 1`] = `
@@ -39,9 +35,5 @@ exports[`<KeycloakWrapper /> should throw error correctly 1`] = `
     </p>
   }
   tokenUpdateInterval={50}
->
-  <div>
-    <div />
-  </div>
-</KeycloakWrapper>
+/>
 `;
