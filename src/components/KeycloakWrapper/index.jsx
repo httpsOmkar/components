@@ -139,10 +139,10 @@ export default class KeycloakWrapper extends Component {
 
     return (
       <KeycloakContext.Provider value={this.state}>
-        <div>
-          {!error && <div>{keycloakPromise && children}</div>}
+        <>
+          {!error && <>{keycloakPromise && children}</>}
           {error && <ErrorChild />}
-        </div>
+        </>
       </KeycloakContext.Provider>
     );
   }

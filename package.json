@@ -5,6 +5,12 @@
   "repository": "httpsOmkar/auth-react-component",
   "license": "MPL-2.0",
   "main": "./index.js",
+  "keywords": [
+    "keycloak",
+    "react",
+    "reactjs",
+    "componet"
+  ],
   "scripts": {
     "start": "styleguidist server",
     "build": "webpack --mode production && scripts/copyFiles",
