@@ -53,7 +53,8 @@ export default class KeycloakWrapper extends Component {
   };
 
   state = {
-    keycloakPromise: null,
+    keycloakAuthenticated: null,
+    keycloakProfilePromise: null,
     error: null,
   };
 
@@ -82,7 +83,7 @@ export default class KeycloakWrapper extends Component {
               keycloak.updateToken(0).error(err => {
                 if (err) {
                   // eslint-disable-next-line
-                  this.setState({ error: err });
+                  this.setState({ error: err })
                 }
               });
             }, this.props.tokenUpdateInterval);
@@ -114,7 +115,10 @@ export default class KeycloakWrapper extends Component {
   componentDidMount() {
     this.keycloakPromise()
       .then(docs => {
-        this.setState({ keycloakPromise: docs });
+        this.setState({
+          keycloakAuthenticated: docs,
+          keycloakProfilePromise: this.keycloakProfilePromise(),
+        });
       })
       .catch(error => {
         this.setState({ error });
@@ -133,16 +137,14 @@ export default class KeycloakWrapper extends Component {
    * @returns {*}
    */
   render() {
-    const { keycloakPromise, error } = this.state;
+    const { keycloakAuthenticated, error, keycloakProfilePromise } = this.state;
     const { children, errorChildren } = this.props;
     const ErrorChild = errorChildren || KeycloakError;
 
     return (
-      <KeycloakContext.Provider value={this.state}>
-        <div>
-          {!error && <div>{keycloakPromise && children}</div>}
-          {error && <ErrorChild />}
-        </div>
+      <KeycloakContext.Provider
+        value={{ profile: keycloakProfilePromise, error }}>
+        {error ? <ErrorChild /> : <>{keycloakAuthenticated && children}</>}
       </KeycloakContext.Provider>
     );
   }

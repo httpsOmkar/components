@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<KeycloakWrapper /> should render correctly 1`] = `
+<KeycloakWrapper
+  className={null}
+  errorChildren={null}
+  keycloak={
+    KeycloakMockInstance {
+      "isError": false,
+    }
+  }
+  keycloakOptions={Object {}}
+  loadingElement={
+    <p>
+      Loading...
+    </p>
+  }
+  tokenUpdateInterval={50}
+/>
+`;
+
+exports[`<KeycloakWrapper /> should throw error correctly 1`] = `
+<KeycloakWrapper
+  className={null}
+  errorChildren={null}
+  keycloak={
+    KeycloakMockInstance {
+      "isError": true,
+    }
+  }
+  keycloakOptions={Object {}}
+  loadingElement={
+    <p>
+      Loading...
+    </p>
+  }
+  tokenUpdateInterval={50}
+/>
+`;

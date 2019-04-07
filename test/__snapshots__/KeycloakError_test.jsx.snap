@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<KeycloakWrapper /> should render correctly 1`] = `
+<KeycloakError>
+  <div
+    className=""
+  >
+    Something went wrong
+  </div>
+</KeycloakError>
+`;
+
+exports[`<KeycloakWrapper /> should render not render when no error 1`] = `
+<KeycloakError>
+  <div
+    className=""
+  />
+</KeycloakError>
+`;

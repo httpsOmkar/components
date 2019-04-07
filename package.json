@@ -1,10 +1,16 @@
 {
   "name": "keycloak-js-react",
-  "version": "2.5.1",
+  "version": "0.0.0-development",
   "description": "React Components for Authentication",
   "repository": "httpsOmkar/auth-react-component",
   "license": "MPL-2.0",
   "main": "./index.js",
+  "keywords": [
+    "keycloak",
+    "react",
+    "reactjs",
+    "componet"
+  ],
   "scripts": {
     "start": "styleguidist server",
     "build": "webpack --mode production && scripts/copyFiles",
@@ -54,7 +60,6 @@
     "react-dom": "^16.4.1"
   },
   "dependencies": {
-    "keyboardjs": "^2.5.1",
     "prop-types": "^15.6.2"
   },
   "bugs": {
