@@ -19,6 +19,8 @@
 
 ## Getting started
 
+Integrate the keycloak with the react
+
 ```
 # If using Yarn:
 yarn add keycloak-js-react
