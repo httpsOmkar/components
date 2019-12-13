@@ -15,6 +15,8 @@
 
 ## Requirements
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/httpsOmkar/auth-react-component.svg)](https://greenkeeper.io/)
+
 * React, React DOM, keycloak-js
 
 ## Getting started
